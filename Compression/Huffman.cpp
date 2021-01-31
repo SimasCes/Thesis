@@ -215,4 +215,6 @@ int main()
     double compressed_ratio = uncompressed_size / compressed_size;
 
     cout << compressed_ratio;
+
+    return 1;
 }
