@@ -6,11 +6,17 @@
 #include <queue>
 using namespace std;
 
+
 // To help with the huffman coding, and coding the Node these sites and tutorials were used:
 // https://www.guru99.com/cpp-structures.html
 // https://oanaunciuleanu.wixsite.com/artofcoding/post/huffman-coding-and-decoding-algorithm-in-c
 // https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
 // some code was also used and some re-weritten to be intergrated with my program 
+
+
+//Global variable to calculate the compressed size
+double compressed_size;
+
 
 // A node which is used to store frequency and characters
 struct Node
@@ -34,6 +40,7 @@ struct Node
 
 };
 
+
 // Compares which of the 2 inputs has a higher frequency
 struct compare
 {
@@ -45,31 +52,28 @@ struct compare
 };
 
 
-////////////////////////////////////////////////////////////////////////////////////////
-////// JUST FOR TESTING NOT MY CODE WILL BE DELETED AFTER CHECKING IF IT WORKS /////////////
-
-// Prints huffman codes from 
-// the root of Huffman Tree. 
-void printCodes(struct Node* root, string str) 
+// Prints huffman codes from the root of Huffman Tree (edited from desplay fuction to compute compression ratio)
+void getCompressedSize(struct Node* root, string str) 
 { 
-  
+    // Stops the loop
     if (!root) 
+    {
         return; 
-  
+    }
+    
+    // If there is data (the root is not finsihed)
     if (root->data != '$') 
-        cout << root->data << ": " << str << "\n"; 
+    {
+        // Calculate the frequency * bits you will be using
+        // The + 8 and str.length() is to add the size of the dictionary
+        // as this is needed for decompression
+        compressed_size += (root->freq * str.length()) + 8 + str.length();
+    }
   
-    printCodes(root->left, str + "0"); 
-    printCodes(root->right, str + "1"); 
+    // Keep searching the tree in left and right branches
+    getCompressedSize(root->left, str + "0"); 
+    getCompressedSize(root->right, str + "1"); 
 } 
-
-////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
 
 // To put the contents of a text file into a string
@@ -147,15 +151,11 @@ pair<list<char>, list<double> > frequencyCalc(string text)
 // print codes by traversing the built Huffman Tree 
 void HuffmanCodes(list<char> data, list<double> frequency) 
 { 
-
-    // TRY TAKE AWAY STRCUT TO-DO
-    /////////////////////////////
-    /////////////////////////////
-    struct Node *left;
-    struct Node *right;
-    struct Node *top ;
+    Node *left;
+    Node *right;
+    Node *top ;
   
-    // Create a minHeap (suing a priority queue)
+    // Create a minHeap (using a priority queue)
     priority_queue<Node*, vector<Node*>, compare> minHeap; 
     
     // This is for the loop 
@@ -189,11 +189,9 @@ void HuffmanCodes(list<char> data, list<double> frequency)
         minHeap.push(top); 
     } 
   
-    // Print Huffman codes using 
-    // the Huffman tree built above 
-    printCodes(minHeap.top(), ""); 
+    // Find the compressed size of the file and store it in the global variable
+    getCompressedSize(minHeap.top(), ""); 
 } 
-
 
 
 int main()
@@ -201,6 +199,8 @@ int main()
     // Store the string, which has the document to compress in text
     string text = fileToString();
 
+    // Calculate the uncompressed size of the file (all characters times 8 bits which is used to store them)
+    double uncompressed_size = text.length() * 8;
 
     //Calculate the frequencies and characters
     pair<list<char>, list<double> > final = frequencyCalc(text);
@@ -208,10 +208,11 @@ int main()
     list<char> characters = final.first;
     list<double> frequency = final.second;
 
-
     // Make the Huffman tree
     HuffmanCodes(characters, frequency); 
 
+    //Find the compression ration
+    double compressed_ratio = uncompressed_size / compressed_size;
 
+    cout << compressed_ratio;
 }
-  
