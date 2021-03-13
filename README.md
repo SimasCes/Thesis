@@ -1,6 +1,5 @@
 # Thesis
 
 
-This is a compression algorithm experimental thesis.
+This is aa experimental thesis on compression algorithms and their effectiveness on different types of datasets.
 
-So far I have pushed working code (in C++) which takes a text file and converts it into a Huffman tree.
