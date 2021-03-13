@@ -1,0 +1,6 @@
+Poem - Because I could not stop for Death - Emily Dickinson - https://www.poetryfoundation.org/poems/47652/because-i-could-not-stop-for-death-479
+Short story - Arnold Winkelried - James Baldwin - https://theshortstory.co.uk/resources/free-short-stories/ - https://theshortstory.co.uk/devsitegkl/wp-content/uploads/2015/09/Baldwin-James-Arnold-Winkelried-short-stories.pdf
+(bp = base pairs aka the length and number of  chromosomes)
+DNA(short) - 1140 bp - Strigops habroptila (Kakapo) CYBT Cytochrome b - Strigops habroptilus mitochondrion - https://www.ncbi.nlm.nih.gov/ - https://www.ncbi.nlm.nih.gov/gene/2853394 - https://www.ncbi.nlm.nih.gov/nuccore/NC_005931.1?report=fasta&from=13650&to=14789
+DNA(medium) - 15363 bp - Felis Catus ALB Albumin - Felis catus isolate Cinnamon breed Abyssinian chromosome B1 - https://www.ncbi.nlm.nih.gov/ - https://www.ncbi.nlm.nih.gov/gene/448843 - https://www.ncbi.nlm.nih.gov/nuccore/NC_018726.3?report=fasta&from=148407709&to=148423071&strand=true
+DNA(long) - 23600 bp - Homo Sapiens TGFB1 Transforming Growth Factor Beta 1 chromosome 19 - https://www.ncbi.nlm.nih.gov/ - https://www.ncbi.nlm.nih.gov/gene/7040 - https://www.ncbi.nlm.nih.gov/nuccore/NC_000019.10?report=fasta&from=41330323&to=41353922&strand=true
