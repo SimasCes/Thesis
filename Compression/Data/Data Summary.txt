@@ -7,3 +7,6 @@ DNA(long) - 23600 bp - Homo Sapiens TGFB1 Transforming Growth Factor Beta 1 chro
 Hello_World - C++ Hello World program (all white spaces removed as a compiler would not read those, and there are no comments)
 Huffman - C++ Huffman encoding algorithm (used as one of the compression algorithms) (all white spaces removed as a compiler would not read those, and there are no comments)
 Link - many un-repeating characters so will be interesting to test - used the link for one of the DNA datasets
+Music(short) - The Bush In Bloom - http://abcnotation.com/ - http://abcnotation.com/tunePage?a=www.montrealsession.ca/lookup.php%3Fid=42%26tb=allans/0001
+Music(medium) - The Cuckoo Hornpipe - http://abcnotation.com/ - http://abcnotation.com/tunePage?a=www.montrealsession.ca/lookup.php%3Fid=10%26tb=hornpipes/0001
+Music(long) - Ave Verum - http://abcnotation.com/ - http://abcnotation.com/tunePage?a=abcplus.sourceforge.net/Choral/Ave_Verum/0002
