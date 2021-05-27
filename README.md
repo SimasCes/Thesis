@@ -21,6 +21,6 @@ https://gist.github.com/MajedSiefALnasr/32cff52b01d764ee158f2c36e4e84d95
 
 
 For LZW (sites used):
-geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/
+https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/
 
 
